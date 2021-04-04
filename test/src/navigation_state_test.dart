@@ -13,7 +13,8 @@ void main() {
     expect(state.currentDestination, isNull);
   });
 
-  test('should set previousDestination and currentDestination on transition', () {
+  test('should set previousDestination and currentDestination on transition',
+      () {
     final state = NavigationState.transition(
       NavigationDestination('previousPath', 'previousArguments'),
       NavigationDestination('currentPath', 'currentArguments'),
@@ -22,10 +23,10 @@ void main() {
     expect(state.previousPath, 'previousPath');
     expect(state.currentPath, 'currentPath');
 
-    expect(state.previousDestination.path, 'previousPath');
-    expect(state.previousDestination.arguments, 'previousArguments');
-    expect(state.currentDestination.path, 'currentPath');
-    expect(state.currentDestination.arguments, 'currentArguments');
+    expect(state.previousDestination?.path, 'previousPath');
+    expect(state.previousDestination?.arguments, 'previousArguments');
+    expect(state.currentDestination?.path, 'currentPath');
+    expect(state.currentDestination?.arguments, 'currentArguments');
   });
 
   test(

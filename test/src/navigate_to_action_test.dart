@@ -5,13 +5,13 @@ void main() {
   test('should pass the NavigationType.shouldPop and no route name', () {
     var action = NavigateToAction.pop();
     expect(action.type, NavigationType.shouldPop);
-    expect(action.name, isNull);
+    expect(action.name, isEmpty);
   });
 
   test('should pass the NavigationType.shouldPopUntil and no route name', () {
     var action = NavigateToAction.popUntil(predicate: (_) => false);
     expect(action.type, NavigationType.shouldPopUntil);
-    expect(action.name, isNull);
+    expect(action.name, isEmpty);
   });
 
   test('should pass the NavigationType.shouldReplace and route name', () {
@@ -32,34 +32,24 @@ void main() {
   });
 
   test(
-      'should throw AssertionError if the route name is null or empty on NavigationType.shouldPush',
+      'should throw AssertionError if the route name is empty on NavigationType.shouldPush',
       () {
-    expect(() => NavigateToAction(null), throwsAssertionError);
     expect(() => NavigateToAction(''), throwsAssertionError);
   });
 
   test(
-      'should throw AssertionError if the route name is null or empty on NavigationType.shouldReplace',
+      'should throw AssertionError if the route name is empty on NavigationType.shouldReplace',
       () {
-    expect(() => NavigateToAction(null, type: NavigationType.shouldReplace),
-        throwsAssertionError);
     expect(() => NavigateToAction('', type: NavigationType.shouldReplace),
         throwsAssertionError);
   });
 
-  test('should allow null or empty route name on NavigationType.shouldPop', () {
-    expect(() => NavigateToAction(null, type: NavigationType.shouldPop),
-        isNotNull);
+  test('should allow empty route name on NavigationType.shouldPop', () {
     expect(
         () => NavigateToAction('', type: NavigationType.shouldPop), isNotNull);
   });
 
-  test('should allow null or empty route name on NavigationType.shouldPopUntil',
-      () {
-    expect(
-        () => NavigateToAction(null,
-            type: NavigationType.shouldPopUntil, predicate: (_) => false),
-        isNotNull);
+  test('should allow empty route name on NavigationType.shouldPopUntil', () {
     expect(
         () => NavigateToAction('',
             type: NavigationType.shouldPopUntil, predicate: (_) => false),
@@ -67,12 +57,8 @@ void main() {
   });
 
   test(
-      'should throw AssertionError if the route name is null or empty or predicate is null on NavigationType.pushNamedAndRemoveUntil',
+      'should throw AssertionError if the route name is empty or predicate is null on NavigationType.pushNamedAndRemoveUntil',
       () {
-    expect(
-        () => NavigateToAction(null,
-            type: NavigationType.shouldPushNamedAndRemoveUntil),
-        throwsAssertionError);
     expect(
         () => NavigateToAction('',
             type: NavigationType.shouldPushNamedAndRemoveUntil),
@@ -84,9 +70,9 @@ void main() {
   });
 
   test(
-      'should throw AssertionError if the predicate is null on NavigationType.popUntil',
+      'should throw AssertionError if the predicate is empty on NavigationType.popUntil',
       () {
-    expect(() => NavigateToAction(null, type: NavigationType.shouldPopUntil),
+    expect(() => NavigateToAction('', type: NavigationType.shouldPopUntil),
         throwsAssertionError);
   });
 }

@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/flutterings/flutter_redux_navigation.svg?branch=master)](https://travis-ci.org/flutterings/flutter_redux_navigation)
-[![codecov](https://codecov.io/gh/flutterings/flutter_redux_navigation/branch/master/graph/badge.svg)](https://codecov.io/gh/flutterings/flutter_redux_navigation)
+[![Build Status](https://travis-ci.org/m8x/flutter_redux_navigation.svg?branch=master)](https://travis-ci.org/m8x/flutter_redux_navigation)
+[![codecov](https://codecov.io/gh/m8x/flutter_redux_navigation/branch/master/graph/badge.svg)](https://codecov.io/gh/m8x/flutter_redux_navigation)
 
 # Flutter Navigation for redux
 
@@ -7,7 +7,7 @@ Navigation Middleware for Flutter's redux library.
 
 Basic classes that enables page navigation through by utilizing [Redux](https://pub.dartlang.org/packages/redux) Store middleware facility.
 
-This package is built to work with [Redux.dart](https://pub.dartlang.org/packages/redux) 4.0.0+.
+This package is built to work with [Redux.dart](https://pub.dartlang.org/packages/redux) 5.0.0+.
 
 ## Redux Middleware
 
